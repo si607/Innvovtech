@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about InnovateTech Solutions - our history, team, values, and commitment to delivering innovative technology solutions worldwide.">
+    <meta name="keywords" content="about us, company history, team, values, technology company, innovation">
+    <meta name="author" content="InnovateTech Solutions">
+    <meta property="og:title" content="About Us - InnovateTech Solutions">
+    <meta property="og:description" content="Discover our journey, meet our expert team, and learn about the values that drive InnovateTech Solutions to deliver exceptional technology services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://innovatetech-solutions.com/about">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    
+    <title>About Us - InnovateTech Solutions</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Additional styles for about page */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            padding: var(--space-lg) var(--space-xl);
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--primary-color);
+            border: 4px solid white;
+            top: 30px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .timeline-item.left {
+            left: 0;
+        }
+        
+        .timeline-item.right {
+            left: 50%;
+        }
+        
+        .timeline-item.right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: var(--space-xl);
+            border-radius: var(--rounded-xl);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+        
+        .timeline-item.left .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: -20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-left-color: white;
+        }
+        
+        .timeline-item.right .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: -20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-right-color: white;
+        }
+        
+        .timeline-year {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--rounded-md);
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: var(--space-md);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: var(--rounded-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            text-align: center;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        
+        .team-info {
+            padding: var(--space-xl);
+        }
+        
+        .team-name {
+            font-size: var(--font-xl);
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .team-position {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+        
+        .team-bio {
+            color: var(--gray-600);
+            font-size: var(--font-sm);
+            line-height: 1.6;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+        
+        .value-card {
+            background: white;
+            padding: var(--space-2xl);
+            border-radius: var(--rounded-xl);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-normal);
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition-normal);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .value-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-lg);
+            font-size: var(--font-2xl);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: var(--space-md);
+            }
+            
+            .timeline-item::after {
+                left: 10px;
+            }
+            
+            .timeline-item.left .timeline-content::after,
+            .timeline-item.right .timeline-content::after {
+                display: none;
+            }
+            
+            .timeline-item.right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body class="page-layout">
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo" aria-label="InnovateTech Solutions Homepage">
+                <img src="images/logo.svg" alt="InnovateTech Solutions Logo" />
+            </a>
+            
+            <nav class="nav-menu" id="navMenu" role="navigation" aria-label="Main Navigation">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active" aria-current="page">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="btn btn-primary cta-button" aria-label="Get started with our services">Get Started</a>
+            </nav>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>About InnovateTech Solutions</h1>
+                <p class="text-large">Pioneering technology innovation for over a decade, empowering businesses to thrive in the digital age through cutting-edge solutions and exceptional service.</p>
+            </div>
+        </section>
+
+        <!-- Company History Timeline -->
+        <section class="section" id="history">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Journey Through Innovation</h2>
+                    <p>From a small startup to a global technology leader, discover the milestones that shaped our company and defined our commitment to excellence.</p>
+                </div>
+                
+                <div class="timeline">
+                    <ol class="sr-only">
+                        <li>2010: Company founded with vision for innovation</li>
+                        <li>2012: First major enterprise client partnership</li>
+                        <li>2015: International expansion and mobile solutions</li>
+                        <li>2018: Cloud transformation and AI integration</li>
+                        <li>2020: Remote collaboration and digital acceleration</li>
+                        <li>2022: Sustainability initiative and green technology</li>
+                        <li>2024: AI-powered solutions and future innovations</li>
+                    </ol>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2010</div>
+                            <h3>The Beginning</h3>
+                            <p>InnovateTech Solutions was founded by a team of passionate developers with a shared vision: to make cutting-edge technology accessible to businesses of all sizes. We started in a small garage with big dreams and an unwavering commitment to innovation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2012</div>
+                            <h3>First Major Partnership</h3>
+                            <p>We secured our first enterprise client, a Fortune 500 company, marking our transition from startup to established technology partner. This milestone validated our approach and set the foundation for sustainable growth.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2015</div>
+                            <h3>Global Expansion</h3>
+                            <p>International expansion began as we opened offices in Europe and Asia. We also launched our mobile solutions division, recognizing the growing importance of mobile-first experiences in the digital landscape.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2018</div>
+                            <h3>Cloud & AI Revolution</h3>
+                            <p>We embraced cloud-native technologies and artificial intelligence, helping clients transform their infrastructure and leverage data-driven insights. Our cloud solutions team grew to 50+ certified professionals.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2020</div>
+                            <h3>Remote Collaboration Era</h3>
+                            <p>The global pandemic accelerated digital transformation initiatives. We pivoted quickly to support remote work solutions, helping over 200 companies maintain business continuity through innovative digital platforms.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2022</div>
+                            <h3>Sustainability Focus</h3>
+                            <p>We launched our Green Tech initiative, committing to carbon-neutral operations and helping clients reduce their environmental footprint through efficient, sustainable technology solutions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2024</div>
+                            <h3>AI-Powered Future</h3>
+                            <p>Today, we're at the forefront of AI integration, developing intelligent solutions that automate processes, enhance decision-making, and create unprecedented opportunities for our clients' growth and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="section bg-gray-50" id="team">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Meet Our Expert Team</h2>
+                    <p>Our diverse team of technology experts, strategists, and innovators work collaboratively to deliver exceptional solutions for our clients worldwide.</p>
+                </div>
+                
+                <div class="team-grid">
+                    <article class="team-member">
+                        <img src="images/team-photos/team1.jpg" alt="Sarah Chen, CEO and Co-Founder" class="team-photo" />
+                        <div class="team-info">
+                            <h3 class="team-name">Sarah Chen</h3>
+                            <p class="team-position">CEO & Co-Founder</p>
+                            <p class="team-bio">Visionary leader with 15+ years in technology innovation. Sarah drives our strategic direction and ensures we stay ahead of emerging trends while maintaining our commitment to client success.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="team-member">
+                        <img src="images/team-photos/team2.jpg" alt="Marcus Rodriguez, CTO and Co-Founder" class="team-photo" />
+                        <div class="team-info">
+                            <h3 class="team-name">Marcus Rodriguez</h3>
+                            <p class="team-position">CTO & Co-Founder</p>
+                            <p class="team-bio">Technical architect and innovation catalyst. Marcus leads our engineering teams and oversees the development of cutting-edge solutions that push the boundaries of what's possible.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="team-member">
+                        <img src="images/team-photos/team3.jpg" alt="Emily Watson, Head of Design" class="team-photo" />
+                        <div class="team-info">
+                            <h3 class="team-name">Emily Watson</h3>
+                            <p class="team-position">Head of Design</p>
+                            <p class="team-bio">Award-winning UX/UI designer passionate about creating intuitive, accessible experiences. Emily ensures every solution we deliver combines functionality with exceptional user experience.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="team-member">
+                        <img src="images/team-photos/team4.jpg" alt="David Kim, Director of Cloud Solutions" class="team-photo" />
+                        <div class="team-info">
+                            <h3 class="team-name">David Kim</h3>
+                            <p class="team-position">Director of Cloud Solutions</p>
+                            <p class="team-bio">Cloud infrastructure expert with extensive experience in scalable architectures. David helps organizations transform their technology landscape through strategic cloud adoption.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Values Section -->
+        <section class="section" id="values">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Core Values</h2>
+                    <p>These fundamental principles guide every decision we make and every solution we create, ensuring we consistently deliver value that makes a meaningful difference.</p>
+                </div>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                        </div>
+                        <h3>Innovation First</h3>
+                        <p>We constantly push boundaries and explore new technologies to create solutions that don't just meet today's needs but anticipate tomorrow's challenges. Innovation is at the heart of everything we do.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                        </div>
+                        <h3>Client Partnership</h3>
+                        <p>We believe in building lasting relationships based on trust, transparency, and mutual success. Your goals become our goals, and your success is our primary measure of achievement.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-gem" aria-hidden="true"></i>
+                        </div>
+                        <h3>Excellence & Quality</h3>
+                        <p>We maintain the highest standards in every aspect of our work. From code quality to customer service, we're committed to delivering excellence that exceeds expectations consistently.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h3>Collaborative Culture</h3>
+                        <p>We foster an inclusive environment where diverse perspectives drive innovation. Our team's collective expertise and collaborative spirit enable us to solve complex challenges effectively.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
+                        </div>
+                        <h3>Sustainability Focus</h3>
+                        <p>We're committed to responsible technology practices that benefit both business and environment. Our solutions prioritize efficiency, sustainability, and positive long-term impact.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3>Security & Trust</h3>
+                        <p>We prioritize security and data protection in every solution we develop. Trust is earned through consistent demonstration of reliability, integrity, and robust security practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>InnovateTech Solutions</h3>
+                    <p>Transforming businesses through innovative technology solutions. We're your trusted partner for digital transformation and growth.</p>
+                    <div class="social-links" role="list" aria-label="Social Media Links">
+                        <a href="https://linkedin.com/company/innovatetech-solutions" aria-label="Follow us on LinkedIn" role="listitem">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://twitter.com/innovatetech" aria-label="Follow us on Twitter" role="listitem">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/innovatetech-solutions" aria-label="View our GitHub profile" role="listitem">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://facebook.com/innovatetech.solutions" aria-label="Follow us on Facebook" role="listitem">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://instagram.com/innovatetech_solutions" aria-label="Follow us on Instagram" role="listitem">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Innovation Drive<br>
+                        Tech Valley, CA 94000<br>
+                        United States</p>
+                        
+                        <p><i class="fas fa-phone" aria-hidden="true"></i> 
+                        <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                        
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> 
+                        <a href="mailto:info@innovatetech-solutions.com">info@innovatetech-solutions.com</a></p>
+                    </address>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <nav aria-label="Footer Navigation">
+                        <p><a href="about.html">About Us</a></p>
+                        <p><a href="contact.html">Contact</a></p>
+                        <p><a href="index.html#services">Services</a></p>
+                        <p><a href="mailto:careers@innovatetech-solutions.com">Careers</a></p>
+                        <p><a href="mailto:support@innovatetech-solutions.com">Support</a></p>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 InnovateTech Solutions. All rights reserved. | 
+                <a href="mailto:privacy@innovatetech-solutions.com">Privacy Policy</a> | 
+                <a href="mailto:legal@innovatetech-solutions.com">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    const isOpen = navMenu.classList.contains('active');
+                    
+                    if (isOpen) {
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    } else {
+                        navMenu.classList.add('active');
+                        menuToggle.classList.add('active');
+                        menuToggle.setAttribute('aria-expanded', 'true');
+                    }
+                });
+                
+                // Close menu when clicking nav links
+                const navLinks = navMenu.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Handle escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuToggle.focus();
+                    }
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add scroll effect to header
+            let lastScrollTop = 0;
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // Scrolling down
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // Scrolling up
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                // Add shadow when scrolled
+                if (scrollTop > 10) {
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>
